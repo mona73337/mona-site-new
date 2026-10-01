@@ -1,0 +1,18 @@
+{
+  "name": "mona737-portfolio",
+  "version": "1.0.0",
+  "description": "Mona737 On-Chain Builder Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "build": "echo 'Static site — no build step needed.'",
+    "preview": "npx serve . -p 4173"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mona737/mona737-portfolio"
+  },
+  "author": "Mona737",
+  "license": "MIT",
+  "keywords": ["portfolio", "web3", "blockchain", "on-chain"]
+}
