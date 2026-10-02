@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mona737 — On-Chain Builder (Product &amp; Community), Creator, Scientist." />
+  <meta name="description" content="0xMon4 — 0n-chain builder (tools, product &amp; community), Creator, Scientist." />
   <meta name="theme-color" content="#000000" />
-  <title>Mona737 — On-Chain Builder</title>
+  <title>0xMon4 — 0n-Chain Builder</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="pfp.png" />
@@ -13,17 +13,17 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Mona737 — On-Chain Builder" />
-  <meta property="og:description" content="On-Chain Builder (Product &amp; Community) · Creator · Scientist" />
+  <meta property="og:title" content="0xMon4 — 0n-Chain Builder" />
+  <meta property="og:description" content="0n-chain builder (tools, product &amp; community) · Creator · Scientist" />
   <meta property="og:image" content="pfp.png" />
-  <meta property="og:url" content="https://mona737.dev" />
+  <meta property="og:url" content="https://0xmon4.dev" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mona737 — On-Chain Builder" />
-  <meta name="twitter:description" content="On-Chain Builder (Product &amp; Community) · Creator · Scientist" />
+  <meta name="twitter:title" content="0xMon4 — 0n-Chain Builder" />
+  <meta name="twitter:description" content="0n-chain builder (tools, product &amp; community) · Creator · Scientist" />
   <meta name="twitter:image" content="pfp.png" />
-  <meta name="twitter:creator" content="@Mona737" />
+  <meta name="twitter:creator" content="@0xMon4" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
@@ -37,12 +37,15 @@
   <!-- ─── CANVAS: Warp Displacement Background ─── -->
   <canvas id="warp-canvas" aria-hidden="true"></canvas>
 
+  <!-- ─── Celestial particles layer ─── -->
+  <div class="celestial-layer" aria-hidden="true" id="celestial-layer"></div>
+
   <!-- ─── NAV ─── -->
   <header class="nav" role="banner">
     <nav class="nav__inner" aria-label="Main navigation">
-      <a href="#hero" class="nav__logo" aria-label="Mona737 Home">
-        <img src="pfp.png" alt="Mona737 avatar" class="nav__logo-img" />
-        <span class="nav__logo-text">Mona<span class="accent">737</span></span>
+      <a href="#hero" class="nav__logo" aria-label="0xMon4 Home">
+        <img src="pfp.png" alt="0xMon4 avatar" class="nav__logo-img" />
+        <span class="nav__logo-text">0x<span class="accent">Mon4</span></span>
       </a>
       <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
@@ -67,7 +70,7 @@
           <div class="hero__pfp-glow" aria-hidden="true"></div>
           <img
             src="pfp.png"
-            alt="Mona737 profile picture — anonymous figure in vibrant patterned hoodie with glowing green smile"
+            alt="0xMon4 profile picture — anonymous figure in vibrant patterned hoodie with glowing green smile"
             class="hero__pfp"
             fetchpriority="high"
             decoding="async"
@@ -76,35 +79,36 @@
           />
         </div>
         <div class="hero__text">
-          <p class="hero__eyebrow">// On-Chain Builder</p>
           <h1 class="hero__title">
-            Mona<span class="accent">737</span>
+            Mona
           </h1>
           <p class="hero__subtitle">
-            Product &amp; Community · Creator · Scientist
+            0n-chain builder (tools, product &amp; community)
           </p>
           <p class="hero__bio">
-            Building at the intersection of Web3, culture, and code.
-            Passionate about open systems, decentralized communities, and
-            the kind of products that actually matter.
+            Building Bridges at the intersection of open decentralized systems &amp; communities i'm most passionate about (Web3) and the kind of products that actually matter
           </p>
           <div class="hero__cta-group">
-            <a href="#projects" class="btn btn--primary">View Projects</a>
-            <a href="#contact" class="btn btn--outline">Get in Touch</a>
+            <button class="btn btn--primary" id="get-in-touch-btn" aria-expanded="false" aria-controls="hero-socials-reveal">
+              Get in Touch
+            </button>
           </div>
-          <div class="hero__socials" aria-label="Social links">
-            <a href="https://twitter.com/Mona737" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
+          <!-- Social icons — hidden, revealed on "Get in Touch" click -->
+          <div class="hero__socials-reveal" id="hero-socials-reveal" aria-label="Contact links" hidden>
+            <a href="https://x.com/0xMon4" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="X (Twitter)">
               <!-- X icon -->
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2 2.25h6.984l4.262 5.633L18.244 2.25ZM17.083 19.77h1.833L6.984 4.126H5.017L17.083 19.77Z"/></svg>
+              <span>X</span>
             </a>
-            <a href="https://github.com/Mona737" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <a href="https://discord.com/users/849387813644140596" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Discord">
+              <!-- Discord icon -->
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+              <span>Discord</span>
             </a>
-            <a href="https://farcaster.xyz/mona737" target="_blank" rel="noopener noreferrer" aria-label="Farcaster">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h6v16H4zm10 0h6v16h-6zM6 12h12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/mona737" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <a href="https://t.me/mona73337" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Telegram">
+              <!-- Telegram icon -->
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram</span>
             </a>
           </div>
         </div>
@@ -125,20 +129,18 @@
         <div class="about__grid">
           <div class="about__text">
             <p>
-              I'm <strong class="accent">Mona737</strong> — a pseudonymous builder operating at the bleeding edge of on-chain culture, product development, and community design. I've spent years understanding how decentralized systems work not just technically, but socially.
+              Heyy there fren, I'm <strong class="accent">Mona</strong> — a simple builder that cares for crypto culture, community design and product development that actually matters to the blockchain architecture. I've spent years understanding how decentralized systems work not just technically, but socially.
             </p>
             <p>
-              My work lives at the intersection of technology, creativity, and community. I build products people want to actually use, communities worth being part of, and experiments worth having.
+              My work lives at the intersection of creativity, community and of useful technology aiming to solve real problems. I or help build products people want to actually use, communities worth being part of, and experiments worth exploring.
             </p>
             <p>
-              When I'm not deep in the build, I'm writing, researching, or lurking somewhere online being radically anonymous.
+              Whenever (rarely) i'm not deep in code, im writing, researching or playing DFG/Anime-binging hahaha
             </p>
             <div class="about__tags">
               <span class="tag">Web3 Native</span>
               <span class="tag">Community Architect</span>
               <span class="tag">Product Thinker</span>
-              <span class="tag">Pseudonymous</span>
-              <span class="tag">Open-Source</span>
             </div>
           </div>
           <div class="about__stats">
@@ -147,16 +149,8 @@
               <span class="stat-card__label">Years On-Chain</span>
             </div>
             <div class="stat-card">
-              <span class="stat-card__num accent">10+</span>
-              <span class="stat-card__label">Projects Shipped</span>
-            </div>
-            <div class="stat-card">
               <span class="stat-card__num accent">∞</span>
-              <span class="stat-card__label">Ideas Brewing</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-card__num accent">1</span>
-              <span class="stat-card__label">Identity (sort of)</span>
+              <span class="stat-card__label">Evergreen Ideating</span>
             </div>
           </div>
         </div>
@@ -182,7 +176,6 @@
               <span class="skill-pill">React</span>
               <span class="skill-pill">Next.js</span>
               <span class="skill-pill">Ethers.js</span>
-              <span class="skill-pill">Wagmi</span>
               <span class="skill-pill">Hardhat</span>
               <span class="skill-pill">Foundry</span>
               <span class="skill-pill">Node.js</span>
@@ -199,11 +192,6 @@
               <span class="skill-pill">DeFi</span>
               <span class="skill-pill">NFTs</span>
               <span class="skill-pill">DAOs</span>
-              <span class="skill-pill">IPFS</span>
-              <span class="skill-pill">The Graph</span>
-              <span class="skill-pill">Farcaster</span>
-              <span class="skill-pill">Lens</span>
-              <span class="skill-pill">Zora</span>
             </div>
           </div>
           <div class="skill-group">
@@ -245,111 +233,67 @@
           <span class="section__label">// 03</span>
           <h2 class="section__title" id="projects-title">Projects</h2>
         </div>
-        <div class="projects__grid">
 
-          <article class="project-card" aria-label="Project: On-Chain Portfolio">
-            <div class="project-card__header">
-              <div class="project-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+        <!-- GitHub Activity Infographic -->
+        <div class="gh-infographic" aria-label="GitHub activity overview">
+          <div class="gh-infographic__header">
+            <div class="gh-infographic__profile">
+              <svg class="gh-infographic__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <div>
+                <span class="gh-infographic__handle">github.com/<strong>0xMon4</strong></span>
+                <span class="gh-infographic__sub">Building quietly in the open</span>
               </div>
-              <div class="project-card__badges">
-                <span class="badge badge--green">Live</span>
-              </div>
             </div>
-            <h3 class="project-card__title">On-Chain Portfolio</h3>
-            <p class="project-card__desc">A fully on-chain portfolio site that lives on Ethereum. No IPFS, no backend — pure chain storage. Exploring the limits of what can be deployed and executed purely on-chain.</p>
-            <div class="project-card__tech">
-              <span class="tag tag--sm">Solidity</span>
-              <span class="tag tag--sm">EVM</span>
-              <span class="tag tag--sm">HTML on-chain</span>
-            </div>
-            <div class="project-card__footer">
-              <a href="#" class="project-card__link" aria-label="View On-Chain Portfolio project">
-                View Project
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
-              </a>
-            </div>
-          </article>
+            <a href="https://github.com/0xMon4" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">
+              View GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:14px;height:14px"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </a>
+          </div>
 
-          <article class="project-card" aria-label="Project: Community OS">
-            <div class="project-card__header">
-              <div class="project-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
-              </div>
-              <div class="project-card__badges">
-                <span class="badge badge--yellow">WIP</span>
-              </div>
+          <!-- Contribution heatmap (visual decoration) -->
+          <div class="gh-heatmap" aria-label="Activity heatmap visualization">
+            <div class="gh-heatmap__grid" id="heatmap-grid"></div>
+            <div class="gh-heatmap__legend">
+              <span>Less</span>
+              <span class="gh-heatmap__dot gh-heatmap__dot--0"></span>
+              <span class="gh-heatmap__dot gh-heatmap__dot--1"></span>
+              <span class="gh-heatmap__dot gh-heatmap__dot--2"></span>
+              <span class="gh-heatmap__dot gh-heatmap__dot--3"></span>
+              <span class="gh-heatmap__dot gh-heatmap__dot--4"></span>
+              <span>More</span>
             </div>
-            <h3 class="project-card__title">Community OS</h3>
-            <p class="project-card__desc">An open-source operating system for DAO communities. Templates, playbooks, and tooling for bootstrapping, governing, and scaling decentralized communities from zero to thriving.</p>
-            <div class="project-card__tech">
-              <span class="tag tag--sm">DAO</span>
-              <span class="tag tag--sm">Governance</span>
-              <span class="tag tag--sm">Open-Source</span>
-            </div>
-            <div class="project-card__footer">
-              <a href="#" class="project-card__link" aria-label="View Community OS project">
-                View Project
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
-              </a>
-            </div>
-          </article>
+          </div>
 
-          <article class="project-card" aria-label="Project: Warp Protocol">
-            <div class="project-card__header">
-              <div class="project-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
-              </div>
-              <div class="project-card__badges">
-                <span class="badge badge--green">Live</span>
-              </div>
+          <!-- Stats row -->
+          <div class="gh-stats">
+            <div class="gh-stat">
+              <span class="gh-stat__num accent">∞</span>
+              <span class="gh-stat__label">Commits</span>
             </div>
-            <h3 class="project-card__title">Warp Protocol</h3>
-            <p class="project-card__desc">A gasless relayer protocol for micro-transactions on EVM chains. Enabling seamless UX for Web3 applications by abstracting gas costs and enabling social recovery.</p>
-            <div class="project-card__tech">
-              <span class="tag tag--sm">EIP-4337</span>
-              <span class="tag tag--sm">Account Abstraction</span>
-              <span class="tag tag--sm">Relayer</span>
+            <div class="gh-stat">
+              <span class="gh-stat__num accent">🛠</span>
+              <span class="gh-stat__label">Repos</span>
             </div>
-            <div class="project-card__footer">
-              <a href="#" class="project-card__link" aria-label="View Warp Protocol project">
-                View Project
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
-              </a>
+            <div class="gh-stat">
+              <span class="gh-stat__num accent">🌱</span>
+              <span class="gh-stat__label">Always growing</span>
             </div>
-          </article>
+          </div>
+        </div>
 
-          <article class="project-card" aria-label="Project: Void NFT">
-            <div class="project-card__header">
-              <div class="project-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
-              </div>
-              <div class="project-card__badges">
-                <span class="badge badge--green">Minted</span>
-              </div>
-            </div>
-            <h3 class="project-card__title">Void NFT Collection</h3>
-            <p class="project-card__desc">Generative art exploring the concept of identity, anonymity, and presence on-chain. 737 unique pieces, fully on-chain SVG art. Each token is a statement about the space between identity and anonymity.</p>
-            <div class="project-card__tech">
-              <span class="tag tag--sm">NFT</span>
-              <span class="tag tag--sm">Generative Art</span>
-              <span class="tag tag--sm">On-chain SVG</span>
-            </div>
-            <div class="project-card__footer">
-              <a href="#" class="project-card__link" aria-label="View Void NFT project">
-                View Project
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
-              </a>
-            </div>
-          </article>
+        <!-- "Next ideas" section -->
+        <div class="projects__next-label">
+          <span class="section__label">// next ideas — actively working on</span>
+        </div>
+        <div class="projects__grid projects__grid--next">
 
-          <article class="project-card" aria-label="Project: SciDAO">
+          <article class="project-card project-card--idea" aria-label="Next project: SciDAO">
             <div class="project-card__header">
               <div class="project-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
               </div>
               <div class="project-card__badges">
-                <span class="badge badge--blue">Research</span>
+                <span class="badge badge--purple">Next idea</span>
               </div>
             </div>
             <h3 class="project-card__title">SciDAO</h3>
@@ -359,19 +303,23 @@
               <span class="tag tag--sm">Grants</span>
               <span class="tag tag--sm">DAO</span>
             </div>
-            <div class="project-card__footer">
-              <a href="#" class="project-card__link" aria-label="View SciDAO project">
-                View Project
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
-              </a>
-            </div>
           </article>
 
-          <article class="project-card project-card--more" aria-label="More projects coming soon">
-            <div class="project-card__more-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
-              <p>More projects brewing…</p>
-              <a href="https://github.com/Mona737" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">See GitHub</a>
+          <article class="project-card project-card--idea" aria-label="Next project: Community OS">
+            <div class="project-card__header">
+              <div class="project-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+              </div>
+              <div class="project-card__badges">
+                <span class="badge badge--purple">Next idea</span>
+              </div>
+            </div>
+            <h3 class="project-card__title">Community OS</h3>
+            <p class="project-card__desc">An open-source operating system for DAO communities. Templates, playbooks, and tooling for bootstrapping, governing, and scaling decentralized communities from zero to thriving.</p>
+            <div class="project-card__tech">
+              <span class="tag tag--sm">DAO</span>
+              <span class="tag tag--sm">Governance</span>
+              <span class="tag tag--sm">Open-Source</span>
             </div>
           </article>
 
@@ -410,15 +358,33 @@
             <div class="timeline__dot" aria-hidden="true"></div>
             <div class="timeline__content">
               <div class="timeline__meta">
+                <span class="timeline__date">2024</span>
+              </div>
+              <h3 class="timeline__role">Junior DevRel — Product &amp; Community</h3>
+              <p class="timeline__org"><a href="https://monad.xyz" target="_blank" rel="noopener noreferrer" class="timeline__link">@monad</a></p>
+              <p class="timeline__desc">Developer Relations at Monad — bridging builder communities and protocol teams. Supported product feedback loops, community onboarding, and developer-facing content across the Monad ecosystem.</p>
+              <div class="timeline__tags">
+                <span class="tag tag--sm">DevRel</span>
+                <span class="tag tag--sm">Product</span>
+                <span class="tag tag--sm">Community</span>
+                <span class="tag tag--sm">Monad</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <div class="timeline__meta">
                 <span class="timeline__date">2023 — 2024</span>
               </div>
-              <h3 class="timeline__role">Community Lead</h3>
-              <p class="timeline__org">Undisclosed Web3 Protocol</p>
-              <p class="timeline__desc">Led community growth from 500 → 15,000+ members. Designed governance frameworks, moderation systems, and community incentive programs. Shipped community-requested features by bridging user feedback to engineering.</p>
+              <h3 class="timeline__role">Inner Circle</h3>
+              <p class="timeline__org"><a href="https://sndc.app" target="_blank" rel="noopener noreferrer" class="timeline__link">@sndcapp</a></p>
+              <p class="timeline__desc">Part of the founding inner circle at SNDC — a social layer protocol at the intersection of music, culture, and Web3. Helped shape early community strategy, product direction, and ecosystem partnerships.</p>
               <div class="timeline__tags">
-                <span class="tag tag--sm">Community</span>
-                <span class="tag tag--sm">Governance</span>
-                <span class="tag tag--sm">Growth</span>
+                <span class="tag tag--sm">Inner Circle</span>
+                <span class="tag tag--sm">Music x Web3</span>
+                <span class="tag tag--sm">Community Strategy</span>
               </div>
             </div>
           </div>
@@ -429,13 +395,14 @@
               <div class="timeline__meta">
                 <span class="timeline__date">2022 — 2023</span>
               </div>
-              <h3 class="timeline__role">Smart Contract Developer</h3>
-              <p class="timeline__org">DeFi Startup (Stealth)</p>
-              <p class="timeline__desc">Wrote and audited Solidity contracts for a DeFi protocol managing $2M+ TVL. Implemented security best-practices and contributed to protocol design decisions.</p>
+              <h3 class="timeline__role">Art Director</h3>
+              <p class="timeline__org"><a href="https://twitter.com/MonkeyHoodNFT" target="_blank" rel="noopener noreferrer" class="timeline__link">@MonkeyHoodNFT</a> — RobinHood Chain</p>
+              <p class="timeline__desc">Led art direction for MonkeyHood NFT on RobinHood Chain. Defined visual identity, oversaw generative art production, and collaborated with the team to build a culturally resonant NFT collection and community.</p>
               <div class="timeline__tags">
-                <span class="tag tag--sm">Solidity</span>
-                <span class="tag tag--sm">DeFi</span>
-                <span class="tag tag--sm">Security</span>
+                <span class="tag tag--sm">Art Direction</span>
+                <span class="tag tag--sm">NFT</span>
+                <span class="tag tag--sm">Generative Art</span>
+                <span class="tag tag--sm">RobinHood Chain</span>
               </div>
             </div>
           </div>
@@ -446,13 +413,13 @@
               <div class="timeline__meta">
                 <span class="timeline__date">2021 — 2022</span>
               </div>
-              <h3 class="timeline__role">Research Scientist</h3>
-              <p class="timeline__org">Academic Institution</p>
-              <p class="timeline__desc">Conducted research at the intersection of computational science and social systems. Published findings on emergent behavior in decentralized networks. Made the jump to Web3 during this time.</p>
+              <h3 class="timeline__role">Community Lead</h3>
+              <p class="timeline__org">Undisclosed Web3 Protocol</p>
+              <p class="timeline__desc">Led community growth from 500 → 15,000+ members. Designed governance frameworks, moderation systems, and community incentive programs. Shipped community-requested features by bridging user feedback to engineering.</p>
               <div class="timeline__tags">
-                <span class="tag tag--sm">Research</span>
-                <span class="tag tag--sm">Science</span>
-                <span class="tag tag--sm">Networks</span>
+                <span class="tag tag--sm">Community</span>
+                <span class="tag tag--sm">Governance</span>
+                <span class="tag tag--sm">Growth</span>
               </div>
             </div>
           </div>
@@ -532,17 +499,21 @@
               Reach out — I read everything, respond selectively, and am always down for a good conversation.
             </p>
             <div class="contact__links">
-              <a href="https://twitter.com/Mona737" target="_blank" rel="noopener noreferrer" class="contact__link">
+              <a href="https://x.com/0xMon4" target="_blank" rel="noopener noreferrer" class="contact__link">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2 2.25h6.984l4.262 5.633L18.244 2.25ZM17.083 19.77h1.833L6.984 4.126H5.017L17.083 19.77Z"/></svg>
-                @Mona737 on X
+                @0xMon4 on X
               </a>
-              <a href="https://farcaster.xyz/mona737" target="_blank" rel="noopener noreferrer" class="contact__link">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h6v16H4zm10 0h6v16h-6zM6 12h12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-                mona737 on Farcaster
+              <a href="https://discord.com/users/849387813644140596" target="_blank" rel="noopener noreferrer" class="contact__link">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                Discord
               </a>
-              <a href="mailto:hello@mona737.dev" class="contact__link">
+              <a href="https://t.me/mona73337" target="_blank" rel="noopener noreferrer" class="contact__link">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                Telegram
+              </a>
+              <a href="mailto:hello@0xmon4.dev" class="contact__link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                hello@mona737.dev
+                hello@0xmon4.dev
               </a>
             </div>
           </div>
@@ -587,7 +558,7 @@
       <div class="footer__inner">
         <div class="footer__left">
           <a href="#hero" class="footer__logo" aria-label="Back to top">
-            Mona<span class="accent">737</span>
+            0x<span class="accent">Mon4</span>
           </a>
           <p class="footer__tagline">Building in the void.</p>
         </div>
@@ -598,16 +569,19 @@
           <a href="#contact">Contact</a>
         </nav>
         <div class="footer__socials" aria-label="Social links">
-          <a href="https://twitter.com/Mona737" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+          <a href="https://x.com/0xMon4" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2 2.25h6.984l4.262 5.633L18.244 2.25ZM17.083 19.77h1.833L6.984 4.126H5.017L17.083 19.77Z"/></svg>
           </a>
-          <a href="https://github.com/Mona737" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://github.com/0xMon4" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+          <a href="https://discord.com/users/849387813644140596" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
           </a>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 Mona737. All rights reserved.</p>
+        <p>&copy; 2026 0xMon4. All rights reserved.</p>
         <p>Built with ☕ and green light.</p>
       </div>
     </div>
